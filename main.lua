@@ -1,9 +1,9 @@
 -----------------------------------------------------------------------------------------
 -- main.lua
--- Created by: Gil Robern
--- Modified by: Your Name
--- Date: Month Day, Year
--- Description: This calls the splash screen of the app to load itself.
+-- Title: Click on Right Answer
+-- Name: Dante Beltran
+-- Course: ICS2O/3C
+-- This program is a math game that lets you click on the right answer
 -----------------------------------------------------------------------------------------
 
 -- Hiding Status Bar

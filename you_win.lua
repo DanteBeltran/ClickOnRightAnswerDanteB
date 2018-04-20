@@ -1,11 +1,14 @@
 -----------------------------------------------------------------------------------------
--- you_lose.lua
+-- you_win.lua
 -- Title: Click on Right Answer
 -- Name: Dante Beltran
 -- Course: ICS2O/3C
--- Description: This shows the player that they lost the game and plays a booing sound.
+-- Description: This shows the player that they won the game and plays a win sound.
 -----------------------------------------------------------------------------------------
+--load sounds
+local winSound = audio.loadSound( "Sounds/You win sound effect.mp3")
 
+audio.play(winSound)
 -----------------------------------------------------------------------------------------
 -- INITIALIZATIONS
 -----------------------------------------------------------------------------------------
@@ -18,7 +21,7 @@ local widget = require( "widget" )
 -----------------------------------------------------------------------------------------
 
 -- Naming Scene
-sceneName = "you_lose"
+sceneName = "you_win"
 
 -----------------------------------------------------------------------------------------
 
@@ -48,7 +51,7 @@ function scene:create( event )
     local sceneGroup = self.view
 
     -- Display background
-    bkg = display.newImage("Images/You Lose.png")
+    bkg = display.newImage("Images/You Win Screen.png")
     bkg.x = display.contentCenterX
     bkg.y = display.contentCenterY
     bkg.width = display.contentWidth
@@ -139,6 +142,7 @@ scene:addEventListener( "create", scene )
 scene:addEventListener( "show", scene )
 scene:addEventListener( "hide", scene )
 scene:addEventListener( "destroy", scene )
+audio.play(winSound)
 
 -----------------------------------------------------------------------------------------
 
