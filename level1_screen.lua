@@ -11,12 +11,14 @@
 -- INITIALIZATIONS
 -----------------------------------------------------------------------------------------
 --load sounds
-local bkgMusic audio.loadSound( "Sounds/ level1Music.mp3")
-local correctSound sudio.loadSound( "Sounds/ CorrectAnswer.mp3")
-local incorrectSound sudio.loadSound( "Sounds/ WrongBuzzer.mp3")
+local bkgMusic = audio.loadSound( "Sounds/level1Music.mp3")
+local bkgSoundChannel
+local correctSound = audio.loadSound( "Sounds/CorrectAnswer.mp3")
+local correctSoundChannel
+local incorrectSound = audio.loadSound( "Sounds/WrongBuzzer.mp3")
+local incorrectSoundChannel
 
--- play bkg music
-audio.play(bkgMusic)
+
 
 -- Use Composer Library
 local composer = require( "composer" )
@@ -396,6 +398,8 @@ function scene:show( event )
     -- Creating a group that associates objects with the scene
     --local sceneGroup = self.view
     local phase = event.phase
+    local bkgSoundChannel = audio.play(bkgMusic)
+
 
 
     -----------------------------------------------------------------------------------------
