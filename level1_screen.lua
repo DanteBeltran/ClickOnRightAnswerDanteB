@@ -10,7 +10,13 @@
 -----------------------------------------------------------------------------------------
 -- INITIALIZATIONS
 -----------------------------------------------------------------------------------------
+--load sounds
+local bkgMusic audio.loadSound( "Sounds/ level1Music.mp3")
+local correctSound sudio.loadSound( "Sounds/ CorrectAnswer.mp3")
+local incorrectSound sudio.loadSound( "Sounds/ WrongBuzzer.mp3")
 
+-- play bkg music
+audio.play(bkgMusic)
 
 -- Use Composer Library
 local composer = require( "composer" )
@@ -202,6 +208,8 @@ local function TouchListenerAnswer(touch)
             correct.isVisible = true
             -- increase the number correct by 1
             numberCorrect = numberCorrect + 1
+            --play correct sound
+            audio.play(correctSound)
             -- call RestartScene after 1 second
             timer.performWithDelay( 1000, RestartScene )
         end        
@@ -222,6 +230,8 @@ local function TouchListenerWrongAnswer1(touch)
             incorrect.isVisible = true
             -- decrease a life
             lives = lives - 1
+            -- play buzzer
+            audio.play(incorrectSound)
             -- call RestartScene after 1 second
             timer.performWithDelay( 1000, RestartScene )            
         end        
@@ -243,6 +253,8 @@ local function TouchListenerWrongAnswer2(touch)
                 incorrect.isVisible = true
                 -- decrease a life
                 lives = lives - 1
+                -- play buzzer
+                audio.play(incorrectSound)
                 -- call RestartScene after 1 second
                 timer.performWithDelay( 1000, RestartScene )            
             end        
@@ -264,6 +276,8 @@ local function TouchListenerWrongAnswer3(touch)
                 incorrect.isVisible = true
                 -- decrease a life
                 lives = lives - 1
+                -- play buzzer
+                audio.play(incorrectSound)
                 -- call RestartScene after 1 second
                 timer.performWithDelay( 1000, RestartScene )            
             end        
